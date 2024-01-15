@@ -6,7 +6,7 @@ steps:
       '-t',
       'us-central1-docker.pkg.dev/cloud-functions-7714b/reservations/production',
       '-f',
-      'apps/reservations/Dockerfile'
+      'apps/reservations/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -21,7 +21,7 @@ steps:
       '-t',
       'us-central1-docker.pkg.dev/cloud-functions-7714b/auth/production',
       '-f',
-      'apps/auth/Dockerfile'
+      'apps/auth/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -36,7 +36,7 @@ steps:
       '-t',
       'us-central1-docker.pkg.dev/cloud-functions-7714b/notifications/production',
       '-f',
-      'apps/notifications/Dockerfile'
+      'apps/notifications/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -51,7 +51,7 @@ steps:
       '-t',
       'us-central1-docker.pkg.dev/cloud-functions-7714b/payments/production',
       '-f',
-      'apps/payments/Dockerfile'
+      'apps/payments/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
