@@ -11,6 +11,7 @@ COPY apps/payments apps/payments
 COPY libs libs
 
 RUN npm install
+RUN cd apps/payments && npm install
 
 RUN npm run build payments
 

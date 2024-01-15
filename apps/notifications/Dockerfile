@@ -11,6 +11,7 @@ COPY apps/notifications apps/notifications
 COPY libs libs
 
 RUN npm install
+RUN cd apps/notifications && npm install
 
 RUN npm run build notifications
 
