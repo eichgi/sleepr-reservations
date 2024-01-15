@@ -1,0 +1,61 @@
+steps:
+  # Reservations
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/reservations/production',
+    ]
+  # Auth
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/auth/production',
+      '-f',
+      'apps/auth/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/auth/production',
+    ]
+  # Notifications
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/notifications/production',
+    ]
+  # Payments
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/payments/production',
+      '-f',
+      'apps/payments/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-central1-docker.pkg.dev/cloud-functions-7714b/payments/production',
+    ]
